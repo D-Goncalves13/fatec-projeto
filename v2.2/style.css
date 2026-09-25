@@ -1,0 +1,1588 @@
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VARIÁVEIS DO TEMA CLARO
+========================================================= */
+
+:root {
+
+    --fundo: #ffffff;
+
+    --texto: #222222;
+
+    --menu: #B20000;
+
+    --submenu: #ffffff;
+
+    --texto-submenu: #222222;
+
+    --hover: #004854;
+
+    --borda: #dddddd;
+
+    --fundo-pagina: #f5f5f5;
+
+}
+
+
+/* =========================================================
+   TEMA ESCURO
+========================================================= */
+
+body.escuro {
+
+    --fundo: #121212;
+
+    --texto: #eeeeee;
+
+    --menu: #121212;
+
+    --submenu: #1e1e1e;
+
+    --texto-submenu: #eeeeee;
+
+    --hover: #858585;
+
+    --borda: #333333;
+
+    --fundo-pagina: #1e1e1e;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--fundo);
+
+    color: var(--texto);
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+header {
+
+    width: 100%;
+
+    background-color: var(--fundo);
+
+    transition: background-color 0.3s;
+
+}
+
+
+.cabecalho {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    padding: 15px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* =========================================================
+   LOGOS
+========================================================= */
+
+.logos {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.logos img {
+
+    max-height: 75px;
+
+    width: auto;
+
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+========================================================= */
+
+.redes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 24px;
+
+}
+
+.redes a {
+    color: #141414;
+    transition: 0.3s;
+}
+
+body.escuro .redes a {
+    color: #A3A3A3;
+}
+
+.redes a:hover {
+    color: #7E0000;
+    transform: scale(1.3);
+}
+
+body.escuro .redes a:hover {
+    color: #00C1CF;
+}
+
+
+
+
+
+/* =========================================================
+   BOTÃO DE ALTERAR TEMA
+========================================================= */
+
+#tema {
+    width: 58px;
+    height: 30px;
+    padding: 0;
+    border: 2px solid #141414;
+    border-radius: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+#tema::before {
+    content: "\f185";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #141414;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    transform: translateX(0);
+    transition: transform 0.3s ease,
+                background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+/* Tema escuro */
+body.escuro #tema {
+    background-color: #1e1e1e;
+    border-color: #A3A3A3;
+}
+
+body.escuro #tema::before {
+    content: "\f186";
+    transform: translateX(26px);
+    background-color: #A3A3A3;
+    color: white;
+}
+
+#tema:hover {
+    transform: scale(1.05);
+}
+
+#tema:active {
+    transform: scale(0.95);
+}
+
+
+
+/* =========================================================
+   EFEITOS DO BOTÃO
+========================================================= */
+
+#tema:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+#tema:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* =========================================================
+   MENU PRINCIPAL
+========================================================= */
+
+.menu {
+
+    width: 100%;
+
+    background-color: var(--menu);
+
+}
+
+
+.menu > ul {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    list-style: none;
+
+}
+
+
+.menu li {
+
+    list-style: none;
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   ITENS PRINCIPAIS DO MENU
+========================================================= */
+
+.menu summary,
+.menu .inicio {
+
+    display: block;
+
+    padding: 10px 15px;
+
+    color: white;
+
+    background-color: transparent;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* =========================================================
+   HOVER DO MENU
+========================================================= */
+
+.menu summary:hover,
+.menu .inicio:hover {
+
+    background-color: #858585;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   REMOVE O TRIÂNGULO DO DETAILS
+========================================================= */
+
+.menu summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+
+/* Firefox */
+
+.menu summary {
+
+    list-style: none;
+
+}
+
+
+/* =========================================================
+   SUBMENU PRINCIPAL
+========================================================= */
+
+.submenu {
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    z-index: 1000;
+
+    min-width: 280px;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+
+    background-color: var(--submenu);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =========================================================
+   ITENS DO SUBMENU
+========================================================= */
+
+.submenu li {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #B20000;
+}
+
+.submenu2 li {
+    width: 100%;
+    border-bottom: 1px solid #B20000;
+}
+
+
+/* =========================================================
+   LINKS DO SUBMENU
+========================================================= */
+
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    color: var(--texto-submenu) !important;
+
+    background-color: var(--submenu);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    transition: 0.2s;
+
+}
+
+
+/* =========================================================
+   HOVER DOS LINKS DO SUBMENU
+========================================================= */
+
+.submenu a:hover,
+.submenu2 a:hover {
+    background-color: #DADADA   ;
+    color: white;
+}
+
+/* Tema escuro */
+body.escuro .submenu a:hover,
+body.escuro .submenu2 a:hover {
+    background-color: #666666;
+    color: white;
+}
+
+
+/* =========================================================
+   SUBMENU INTERNO
+========================================================= */
+
+.detales {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   SUMMARY DO SUBMENU INTERNO
+========================================================= */
+
+.detales > summary {
+
+    display: block;
+
+    padding: 12px 15px;
+
+    color: var(--texto-submenu) !important;
+
+    background-color: var(--submenu);
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+/* =========================================================
+   HOVER DO SUMMARY INTERNO
+========================================================= */
+
+.detales > summary:hover {
+
+    background-color: var(--hover);
+
+    color: white !important;
+
+}
+
+
+/* =========================================================
+   SUBMENU 2
+   ABRE PARA A DIREITA
+========================================================= */
+
+.submenu2 {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 100%;
+
+    z-index: 2000;
+
+    min-width: 320px;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+
+    background-color: var(--submenu);
+
+    box-shadow:
+        4px 4px 10px rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =========================================================
+   ITENS DO SUBMENU 2
+========================================================= */
+
+.submenu2 li {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   LINKS DO SUBMENU 2
+========================================================= */
+
+.submenu2 a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    color: var(--texto-submenu) !important;
+
+    background-color: var(--submenu);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    transition: 0.2s;
+
+}
+
+
+/* =========================================================
+   HOVER DO SUBMENU 2
+========================================================= */
+
+.submenu2 a:hover {
+
+    background-color: var(--hover);
+
+    color: white !important;
+
+}
+
+
+/* =========================================================
+   LINKS EXTERNOS
+========================================================= */
+
+.menu-externo {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================================
+   PÁGINAS
+========================================================= */
+
+.pagina {
+    display: none;
+    width: 100%;
+    max-width: none;
+    min-height: 350px;
+    margin: 0;
+    padding: 40px 8%;
+    background-color: transparent;
+    color: var(--texto);
+    border: none;
+    border-radius: 0;
+}
+
+
+.pagina.ativa {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   TÍTULO DAS PÁGINAS
+========================================================= */
+
+.pagina h1 {
+
+    color: #B20000;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+
+body.escuro .pagina h1 {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   TEXTO DAS PÁGINAS
+========================================================= */
+
+.pagina p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CARROSSEL
+========================================================= */
+
+.carrossel {
+    position: relative;
+    width: 65%;
+    max-width: 900px;
+    height: 420px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slides a {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: var(--fundo);
+    transition: transform 0.4s ease;
+}
+
+.slides a:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   BOTÕES DO CARROSSEL
+========================================================= */
+
+.anterior,
+.proximo {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    color: white;
+
+    font-size: 30px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.3s;
+
+}
+
+
+.anterior {
+
+    left: 15px;
+
+}
+
+
+.proximo {
+
+    right: 15px;
+
+}
+
+
+.anterior:hover,
+.proximo:hover {
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+
+/* =========================================================
+   LOCALIZAÇÃO
+========================================================= */
+
+.localizacao {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background-color: var(--fundo);
+
+    color: var(--texto);
+
+    border-radius: 12px;
+
+    border: 1px solid var(--borda);
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA LOCALIZAÇÃO
+========================================================= */
+
+.localizacao h2 {
+
+    margin-bottom: 10px;
+
+    color: #004854;
+
+    font-size: 28px;
+
+}
+
+
+body.escuro .localizacao h2 {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   TEXTO DA LOCALIZAÇÃO
+========================================================= */
+
+.localizacao p {
+
+    margin-bottom: 20px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+.mapa {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =========================================================
+   GOOGLE MAPS
+========================================================= */
+
+.mapa iframe {
+
+    display: block;
+
+    width: 100%;
+
+    height: 450px;
+
+    border: 0;
+
+}
+
+
+/* =========================================================
+   MAPA NO TEMA ESCURO
+========================================================= */
+
+body.escuro .mapa {
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.50);
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 15px 20px;
+
+    }
+
+
+    /* LOGOS */
+
+    .logos {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .logos img {
+
+        max-width: 180px;
+
+        max-height: 60px;
+
+    }
+
+
+    /* REDES */
+
+    .redes {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    /* MENU */
+
+    .menu > ul {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    .menu > ul > li {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    /* SUBMENUS */
+
+    .submenu,
+    .submenu2 {
+
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    /* SUBMENU 2 */
+
+    .submenu2 {
+
+        box-shadow: none;
+
+    }
+
+
+    /* CARROSSEL */
+
+    .carrossel {
+
+        width: 95%;
+
+        height: 250px;
+
+    }
+
+
+    /* PÁGINAS */
+
+    .pagina {
+
+        width: 95%;
+
+        padding: 25px;
+
+    }
+
+
+    /* MAPA */
+
+    .localizacao {
+
+        width: 95%;
+
+        padding: 20px;
+
+    }
+
+
+    .localizacao h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .mapa iframe {
+
+        height: 350px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TELAS PEQUENAS
+========================================================= */
+
+@media (max-width: 500px) {
+
+
+    .logos {
+
+        flex-direction: column;
+
+    }
+
+
+    .redes {
+
+        gap: 15px;
+
+    }
+
+
+    .menu summary,
+    .menu .inicio {
+
+        font-size: 14px;
+
+        padding: 10px;
+
+    }
+
+
+    .submenu a,
+    .submenu2 a,
+    .detales > summary {
+
+        font-size: 14px;
+
+    }
+
+
+    .carrossel {
+
+        height: 200px;
+
+    }
+
+
+    .anterior,
+    .proximo {
+
+        font-size: 20px;
+
+        padding: 8px 12px;
+
+    }
+
+
+    .pagina h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .pagina p {
+
+        font-size: 16px;
+
+    }
+
+
+    .mapa iframe {
+
+        height: 280px;
+
+    }
+
+}
+/* RODAPÉ */
+.rodape {
+    width: 100%;
+    margin-top: auto;
+    padding: 0;
+    color: white;
+    background-color: #004854;
+}
+
+/* Rodapé no tema escuro */
+body.escuro .rodape {
+    background-color: #004854;
+}
+
+.rodape-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rodape-coluna h3 {
+    color: white;
+}
+
+body.escuro .rodape-coluna h3 {
+    color: #00C1CF;
+}
+
+.rodape-coluna p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+.rodape-coluna a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 8px 0;
+    transition: 0.3s;
+}
+
+.rodape-coluna a:hover {
+    color: #00C1CF;
+    transform: translateX(5px);
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 35px;
+}
+
+.rodape-final p {
+    font-size: 13px;
+    color: white;
+    margin: 0;
+}
+
+/* RESPONSIVIDADE DO RODAPÉ */
+@media (max-width: 900px) {
+    .rodape-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rodape {
+        padding: 30px 8% 0;
+    }
+
+    .rodape-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .rodape-coluna {
+        text-align: center;
+    }
+
+    .rodape-coluna a:hover {
+        transform: none;
+    }
+}
+/* ESTRUTURA DA PÁGINA */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    flex: 1;
+}
+
+/* PÁGINAS */
+.pagina {
+    min-height: 100%;
+}
+
+/* RODAPÉ NO FINAL DA PÁGINA */
+.rodape {
+    margin-top: auto;
+}
+
+/* =====================================================
+   MENU FIXO NO TOPO
+===================================================== */
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+/* Evita problemas de sobreposição */
+.menu > ul {
+    position: relative;
+}
+
+/* Divisórias entre os menus principais */
+.menu > ul > li + li {
+    border-left: 1px solid #7E0000;
+    padding-left: 12px;
+}
+
+/* Espaçamento dos menus */
+.menu > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* =========================================================
+   BARRINHAS DO MENU - TEMA ESCURO
+========================================================= */
+
+body.escuro .submenu li,
+body.escuro .submenu2 li {
+
+    border-bottom: 1px solid #00C1CF !important;
+
+}
+
+body.escuro .submenu a,
+body.escuro .submenu2 a {
+
+    border-bottom: 1px solid #00C1CF !important;
+
+}
+
+.menu > ul > li + li {
+    border-left: 1px solid #7E0000;
+    padding-left: 12px;
+}
+
+/* Divisórias no tema escuro */
+body.escuro .menu > ul > li + li {
+    border-left-color: #00C1CF;
+}
+
+/* =========================================================
+   RODAPÉ - ESTILO FATEC
+========================================================= */
+
+.rodape {
+    width: 100%;
+    margin-top: auto;
+    color: white;
+    background-color: #004854;
+}
+
+
+/* =========================================================
+   PARTE SUPERIOR
+========================================================= */
+
+.rodape-superior {
+    width: 100%;
+    min-height: 188px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 305px)
+        minmax(200px, 235px)
+        minmax(300px, 310px)
+        1fr;
+
+    justify-content: center;
+
+    padding: 0;
+
+    background-color: #004854;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.rodape-info {
+    min-height: 88px;
+
+    margin-top: 50px;
+
+    margin-left: 60px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+}
+
+
+/* PRIMEIRO BLOCO */
+
+.rodape-info.endereco {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+
+/* SEGUNDO E TERCEIRO */
+
+.rodape-info.telefone,
+.rodape-info.horario {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* TÍTULOS */
+
+.rodape-info h3 {
+    margin: 0 0 10px 0;
+
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 1.1;
+
+    font-weight: bold;
+}
+
+
+/* TEXTO */
+
+.rodape-info p {
+    margin: 0;
+
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   ÁREA DECORATIVA DO LADO DIREITO
+========================================================= */
+
+.rodape-decoracao {
+    min-height: 188px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+    background-color: #004854;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* EFEITO DECORATIVO */
+
+.rodape-decoracao::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 350px;
+
+    top: -80px;
+    left: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+========================================================= */
+
+.rodape-inferior {
+    width: 100%;
+    min-width: 100%;
+    min-height: 126px;
+
+    background-color: #005566;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 25px 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+.rodape-textos {
+    margin-left: 5%;
+}
+
+.rodape-textos p {
+    margin: 0;
+    width: 55%;
+    color: white;
+    font-size: 12px;
+    line-height: 1.35;
+}
+.rodape-textos p + p {
+    margin-top: 0;
+}
+
+/* LINK */
+
+.rodape-textos a {
+    color: #00C1CF;
+
+    text-decoration: none;
+}
+
+
+/* LINK */
+
+.rodape-textos a {
+    color: #00C1CF;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   SELOS
+========================================================= */
+
+.rodape-selos {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-left: auto;
+
+    margin-right: 70px;
+}
+
+
+.selo-placeholder {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+.rodape-acessibilidade {
+    position: absolute;
+
+    right: 10px;
+
+    top: 21px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #4285e5;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   TEMA ESCURO
+========================================================= */
+
+body.escuro .rodape {
+    background-color: #004854;
+}
+
+body.escuro .rodape-decoracao {
+    background-color: #004854;
+}
+
+body.escuro .rodape-inferior {
+    background-color: #006070;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .rodape-superior {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 30px;
+    }
+
+    .rodape-info {
+        margin-top: 20px;
+    }
+
+    .rodape-decoracao {
+        display: none;
+    }
+
+    .rodape-inferior {
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .rodape-textos {
+        width: 100%;
+    }
+
+    .rodape-selos {
+        margin: 0;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .rodape-superior {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-info.telefone,
+    .rodape-info.horario {
+        border-left: none;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+        padding-top: 20px;
+    }
+
+    .rodape-info.endereco {
+        padding-right: 0;
+    }
+
+}
